@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bebas+Neue&family=Dongle:wght@300;400;700&family=Montserrat+Alternates:wght@300&family=Montserrat:wght@100;400;500;700&family=Nunito:wght@200;300;400;600;700&family=Oswald:wght@200;300&family=Quicksand:wght@300;400;500;600;700&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400&family=Rock+3D&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Pseudo-class & Dark Mode</title>
+
+    <!-- Customisasi menggunakan tailwind -->
+
+    <script>
+        // tailwind config ini berfungsi untuk mecostume style yg tidak ada ditailwind
+        // case disini yg sudah di costume adalah jarak (spacing), font dari guggle dan warna 
+
+        tailwind.config = {
+            darkMode: 'class',
+          theme: {
+              extends: {
+                  spacing: {
+                      13: '3.25rem',
+                },
+                // cara custom font sendiri, taro link google diatas, dan taro jenis fontnya dibawah
+                // https://tailwindcss.com/docs/font-family
+                fontFamily: {
+                    dongel: ['Dongle'],
+                },
+                colors: {
+                    'primary': '#eaeaea',
+                    'bermuda': '#78dcca',
+                },
+              },    
+         },
+     };
+      </script>
+
+      <title>Belajar TailwindCSS</title>
+      <style type="text/tailwindcss">
+        #toggle:checked ~ label div.toggle-circle {
+            @apply translate-x-3;
+        }
+      </style>
+
+    <!-- Tailwind adalah sebuah framework css -->
+    <!-- Tailwind CDN = hanya memasukan link cdn nya saja lebih mudah -->
+</head>
+<body class="dark:bg-slate-800 dark:text-slate-200">
+    <!-- CDN = tidak bisa mengunakan fitur autocomplite nya tailwind (ctrl + spasi) -->
+    <!-- cara agar bisa mengunakan fitur tersebut bikin file tailwind.comfig.js (kosong juga gpp) -->
+
+
+    <!-- font color gradient, bg-gradient , bg-clip-text-transparent -->
+    <h1 class="text-3xl font-bold my-10 text-center">Belajar <span class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 bg-clip-text text-transparent">TailwindCSS</span></h1>
+
+    <section class="mb-10 bg-green-200">
+        <!-- spacing = memberikan jarak pada elementnya seperti margin atau pading -->
+        <!-- margin = memberi area yg ada disekitar area kita -->
+        <h2 class="text-center text-3xl">Spacing</h2>
+        <!-- margin : https://tailwindcss.com/docs/customizing-spacing -->
+        <!-- https://tailwindcss.com/docs/margin -->
+        <!-- banyank nilai yg tidak tersedia saat menggunakan m-? detailnya ada diatas -->
+        <div class="mx-32 py-2 bg-emerald-400">Margin</div>
+        <!-- padding : https://tailwindcss.com/docs/padding -->
+        <div class="py-8 bg-green-700">Padding</div>
+        
+    </section>
+
+    <!-- gradient : https://tailwindcss.com/docs/gradient-color-stops -->
+
+    <!-- to-r = to right, to-l = to leaf, to-r = to right, to-tr = to top right, to-br = to bottom right, via-red-400 = warna ditengah -->
+    <section class="bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500">
+        <div class="mb-10">
+            <h2 class="text-center text-3xl">Sizing</h2>
+            <!-- sizing : https://tailwindcss.com/docs/width -->
+            <div class="w-32 h-32 bg-yellow-200">kotak 1</div>
+        </div>
+    </section>
+
+    <!-- typografi = https://tailwindcss.com/docs/font-size
+        
+        https://tailwindcss.com/docs/font-style -->
+    <section class="font-dongel max-w-3xl mx-auto">
+        <h2 class="mb-4 text-4xl">Belajar Mengenai Typography pada TailwindCSS</h2>
+    <div class="mb-3 text-lg font-semibold text-gray-400">By <a href="#" class= "text-blue-700">Farras</a> 26 januari 2022</div>
+    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique repellendus, magnam iure repellat possimus amet cumque sit fuga corrupti molestias quasi esse explicabo ipsam fugit ab eveniet necessitatibus animi vero tempora assumenda nostrum natus doloremque. Aliquam cumque neque voluptas error in quasi nostrum quaerat nisi tempore quisquam, dicta autem mollitia!</p>
+    <blockquote class="mb-4 italic font-thin text-xl"> "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae corporis aperiam  <a href="#" class="underline font-semibold">voluptatibus</a> voluptate quae iusto rerum illo praesentium soluta odio ex, expedita nam, vel esse qui architecto, commodi animi placeat!"</blockquote>
+    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur elit. Deleniti iusto eius omnis soluta voluptatum facere! Aliquam, eos! Officiis libero ducimus perferendis et optio amet voluptates ullam mollitia dolorem possimus. Pariatur fugit accusantium inventore sed consequuntur?</p>
+</section>
+
+
+<!-- https://tailwindcss.com/docs/background-attachment -->
+<!-- mt[??] = memodifikasi nilai sendiri mengunakan kurung siku 
+     bg[??] = sama seperti mt diatas fungsinya memberi nilai sendiri
+     bgimg = diambil dari unsplash setiap refresh gambar akan berganti
+     overflow-y-scroll = membuat kotak bisa di scroll sumbu y nya aja
+     bg-local = ketika discroll maka gambar akan tampil kembali
+     bg-scroll = gambarnya diem, tulisannya aja yg gerak
+-->
+<div class="max-w-xl h-96 bg-[#bada55] mx-auto mt-[42px] overflow-y-scroll bg-scroll" style="background-image: url('https:/source.unsplash.com/1000x600?computer')">
+<p class="p-5 text-2xl">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum explicabo dolorum inventore voluptas accusantium assumenda ipsum libero? Necessitatibus impedit veritatis illum rerum asperiores qui maxime ipsum quod minus similique molestiae consectetur dignissimos harum, veniam quidem magnam debitis tempora atque quaerat maiores facilis? Optio veniam aperiam possimus officiis, molestias qui perspiciatis nobis deleniti necessitatibus non facere sequi maxime expedita quis eligendi, ab ex. Vel itaque, inventore sunt quod doloremque aperiam cumque ipsam ipsa alias quibusdam et quasi fugit maxime in, officiis enim sapiente velit voluptates deleniti illum beatae! Dolorum similique cupiditate possimus laboriosam quasi autem sint laudantium cumque impedit porro minima, odio provident consectetur pariatur. Hic dolorum, repudiandae reprehenderit molestiae aperiam minus a iure sit accusamus, quibusdam animi facilis. In inventore doloremque assumenda! Modi nemo nihil quisquam, iure in tempora quos debitis optio odio minima totam qui ea porro aut ducimus maxime laboriosam accusantium voluptas atque consequuntur? Distinctio cum nulla reiciendis eos natus, exercitationem dolor odit modi placeat iure debitis ut tempora porro ab commodi, eaque, ex fugit voluptatem velit assumenda! Voluptatibus architecto quaerat iusto, animi cumque quo omnis quisquam nostrum ut esse ipsum eius quasi tempora. Laboriosam unde qui fugit fuga impedit cupiditate nemo minus omnis quasi maiores, quae dolores.
+</p>
+</div>
+
+<!-- bg-cover = mencari cara agar sigambar memenuhi elementnya (sesuai gambar) -->
+<!-- https://tailwindcss.com/docs/background-size -->
+<!-- rounded = memberi border -->
+<!-- https://tailwindcss.com/docs/border-radius -->
+<!-- shadow = memberi bayangan -->
+<!-- https://tailwindcss.com/docs/box-shadow -->
+<!-- bg-blend = menggabungkan antara bg img dan bg color -->
+<!-- https://tailwindcss.com/docs/background-blend-mode -->
+
+<!-- tampilan hover -->
+<!-- <div class="mt-32 max-w-xl mx-auto h-96 bg-slate-300 bg-no-repeat bg-cover rounded-3xl shadow-xl shadow-slate-500 overflow-hidden border-8 hover:bg-blend-multiply" style="background-image: url(./img/laptop-bg.jfif)"> -->
+
+<div class="mt-32 max-w-xl mx-auto h-96 bg-slate-300 bg-no-repeat bg-cover rounded-3xl shadow-xl shadow-slate-500 overflow-hidden border-8 flex" style="background-image: url(./img/laptop-bg.jfif)">
+<div class="w-[200px] h-[200px] bg-black/10 m-auto backdrop-blur-lg"> </div>
+</div>
+
+<hr class="my-20">
+
+<div class="flex justify-center">
+    <span class="text-sm text-slate-500 mr-2">Light</span>
+    <input type="checkbox" id="toggle" class="hidden">
+    <label for="toggle">
+         <div class="w-9 h-5 bg-gray-600 rounded-lg flex items-center p-1 cursor-pointer">
+        <div class="w-4 h-4 bg-zinc-50 rounded-xl flex toggle-circle"></div>
+    </div>
+</label>
+    <span class="text-sm text-slate-500 ml-2">Dark</span>
+</div>
+
+<!-- MEMBUAT HOVER PADA BUTTON -->
+<!-- https://tailwindcss.com/docs/hover-focus-and-other-states  -->
+<!-- https://tailwindcss.com/docs/hover-focus-and-other-states#prefers-color-scheme -->
+<!-- pseudo-classes -->
+
+<!-- block mx-auto = membuat object berada ditengah -->
+<!-- active = membuat gambar ketika di klik berubah -->
+<!-- focus:ring = ketika diklik ada ringnya -->
+
+<button class="my-10 bg-slate-500 px-5 py-2 rounded-lg text-white font-semibold font-inter block mx-auto hover:bg-slate-700 active:bg-slate-900 focus:ring focus:ring-sky-900 dark:bg-slate-300 dark:text-slate-800 dark:hover:text-slate-900 dark:hover:bg-slate-100">SAVE</button>
+
+<!-- group = membuat group pada div, lalu buat group "hover:????" agar bisa hover lebih dari satu-->
+<!-- https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state -->
+<!-- selection:??? = mengubah pada bagian tertentu, bg text contohnya -->
+
+<div class="max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md font-inter hover:bg-gray-300 group font-serif dark:hover:bg-slate-300">
+    <h5 class="font-bold text-gray-600 text-lg mb-3 ml-1 group-hover:text-gray-100 dark:group-hover:-text-slate-800">My Card</h5>
+    <p class="ml-2 text-slate-600 group-hover:text-black selection:bg-emerald-800 selection:text-white first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:mr-1 dark:group-hover:text-slate-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam odit dolores cum debitis reiciendis sequi porro, adipisci ipsa nesciunt amet consectetur esse perferendis impedit suscipit tenetur error provident accusantium totam.</p>
+</div>
+
+<div class="max-w-lg border border-slate-200 rounded-xl mx-auto p-5 shadow-md font-inter group font-serif">
+ <form action="">
+     <label for="email">
+         <span class="block mb-1 text-slate-700 font-normal after:content-['*'] after:text-red-600 after:ml-0.5">Email</span>
+         <!-- https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state -->
+
+        <!-- invalid:text-red-?? = ketika belom ada tulisan @.. dia akan berwarna merah terus -->
+        <!-- peer-invalid dan peer-invalid:visible = untuk membuat email menjadi merah ketika @ belum diketik, tapi ketika sudah diketik dia akan muncul -->
+        
+
+     <input type="email" id="email" placeholder="masukan email anda" class="px-3 py-2 border shadow rounded w-full text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-red-600 invalid:focus:ring-red-600 invalid:focus:border-red-600 peer">
+     <p class="text-sm m-1 text-red-600 invisible peer-invalid:visible">Email tidak valid</p>
+    </label>
+ </form>
+</div>
+
+<div class="mb-96"></div> 
+<script>
+    const checkbox = document.querySelector('#toggle');
+    const html = document.querySelector('html');
+
+    checkbox.addEventListener('click', function()
+    {
+        checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+    })
+</script>
+</body>
+</html>
+
+

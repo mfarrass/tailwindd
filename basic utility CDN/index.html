@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bebas+Neue&family=Dongle:wght@300;400;700&family=Montserrat+Alternates:wght@300&family=Montserrat:wght@100;400;500;700&family=Nunito:wght@200;300;400;600;700&family=Oswald:wght@200;300&family=Quicksand:wght@300;400;500;600;700&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400&family=Rock+3D&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Customisasi menggunakan tailwind -->
+
+    <script>
+        // tailwind config ini berfungsi untuk mecostume style yg tidak ada ditailwind
+        // case disini yg sudah di costume adalah jarak (spacing), font dari guggle dan warna 
+
+        tailwind.config = {
+          theme: {
+              extends: {
+                  spacing: {
+                      13: '3.25rem',
+                },
+                // cara custom font sendiri, taro link google diatas, dan taro jenis fontnya dibawah
+                // https://tailwindcss.com/docs/font-family
+                fontFamily: {
+                    dongel: ['Dongle'],
+                },
+                colors: {
+                    'primary': '#eaeaea',
+                    'bermuda': '#78dcca',
+                },
+              },    
+         },
+     };
+      </script>
+
+      <title>Belajar TailwindCSS</title>
+      <!-- <style type="text/tailwindcss">
+          * {
+              border: 1px solid violet;
+          }
+      </style> -->
+
+    <!-- Tailwind adalah sebuah framework css -->
+    <!-- Tailwind CDN = hanya memasukan link cdn nya saja lebih mudah -->
+</head>
+<body>
+    <!-- CDN = tidak bisa mengunakan fitur autocomplite nya tailwind (ctrl + spasi) -->
+    <!-- cara agar bisa mengunakan fitur tersebut bikin file tailwind.comfig.js (kosong juga gpp) -->
+
+
+    <!-- font color gradient, bg-gradient , bg-clip-text-transparent -->
+    <h1 class="text-2xl font-bold my-10 text-center">Belajar <span class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 bg-clip-text text-transparent">TailwindCSS</span></h1>
+
+    <section class="mb-10 bg-green-200">
+        <!-- spacing = memberikan jarak pada elementnya seperti margin atau pading -->
+        <!-- margin = memberi area yg ada disekitar area kita -->
+        <h2 class="text-center text-3xl">Spacing</h2>
+        <!-- margin : https://tailwindcss.com/docs/customizing-spacing -->
+        <!-- https://tailwindcss.com/docs/margin -->
+        <!-- banyank nilai yg tidak tersedia saat menggunakan m-? detailnya ada diatas -->
+        <div class="mx-32 py-2 bg-emerald-400">Margin</div>
+        <!-- padding : https://tailwindcss.com/docs/padding -->
+        <div class="py-8 bg-green-700">Padding</div>
+        
+    </section>
+
+    <!-- gradient : https://tailwindcss.com/docs/gradient-color-stops -->
+
+    <!-- to-r = to right, to-l = to leaf, to-r = to right, to-tr = to top right, to-br = to bottom right, via-red-400 = warna ditengah -->
+    <section class="bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500">
+        <div class="mb-10">
+            <h2 class="text-center text-3xl">Sizing</h2>
+            <!-- sizing : https://tailwindcss.com/docs/width -->
+            <div class="w-32 h-32 bg-yellow-200">kotak 1</div>
+        </div>
+    </section>
+
+    <!-- typografi = https://tailwindcss.com/docs/font-size
+        
+        https://tailwindcss.com/docs/font-style -->
+    <section class="mb-96 font-dongel max-w-3xl mx-auto">
+        <h2 class="mb-4 text-4xl">Belajar Mengenai Typography pada TailwindCSS</h2>
+    <div class="mb-3 text-lg font-semibold text-gray-400">By <a href="#" class= "text-blue-700">Farras</a> 26 januari 2022</div>
+    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique repellendus, magnam iure repellat possimus amet cumque sit fuga corrupti molestias quasi esse explicabo ipsam fugit ab eveniet necessitatibus animi vero tempora assumenda nostrum natus doloremque. Aliquam cumque neque voluptas error in quasi nostrum quaerat nisi tempore quisquam, dicta autem mollitia!</p>
+    <blockquote class="mb-4 italic font-thin text-xl"> "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae corporis aperiam  <a href="#" class="underline font-semibold">voluptatibus</a> voluptate quae iusto rerum illo praesentium soluta odio ex, expedita nam, vel esse qui architecto, commodi animi placeat!"</blockquote>
+    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur elit. Deleniti iusto eius omnis soluta voluptatum facere! Aliquam, eos! Officiis libero ducimus perferendis et optio amet voluptates ullam mollitia dolorem possimus. Pariatur fugit accusantium inventore sed consequuntur?</p>
+</section>
+</body>
+</html>
+
+
+<!-- 17:24 Basic Utility - Bagian 1 | Belajar TailwindCSS -->

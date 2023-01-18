@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bebas+Neue&family=Dongle:wght@300;400;700&family=Montserrat+Alternates:wght@300&family=Montserrat:wght@100;400;500;700&family=Nunito:wght@200;300;400;600;700&family=Oswald:wght@200;300&family=Quicksand:wght@300;400;500;600;700&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400&family=Rock+3D&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Navbar</title>
+
+    <nav class="fixed top-0 left-0 h-16 bg-white w-full shadow-none sm:shadow">
+        <div class="container m-auto p-3 flex justify-between items-center text-gray-700">
+            <a href="#" class="sm:block hidden mt-2 w-28 h-8 bg-purple-700 hover:bg-blue-700 lg:mt-0"></a>
+            <div class="flex-1 relative sm:content-center mx-5 text-gray-600">
+                <input class="align-center border-gray-300 bg-gray-100 w-72 sm:w-96 h-10 pl-4 pr-16 border-0 rounded-xl text-sm focus:outline-none"
+                    type="search" name="search" placeholder="Cari di sini ...">
+                <button type="submit" class="absolute right top-0 mt-3 -ml-8 ">
+                    <svg class="text-gray-600 h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                        id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966"
+                        style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px"
+                        height="512px">
+                        <path
+                            d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex lg:block hidden">
+                <a href="#"
+                    class="block text-md text-center w-28 h-10 px-4 py-3 text-white rounded-lg bg-purple-700 hover:text-white hover:bg-blue-700 hover:font-bold lg:mt-0"> <span class="iconify text-center -mb-5" data-icon="fe:login"></span>Masuk</a>
+            </div>
+        </div>
+      </nav>
+
+
+    <script>
+        const checkbox = document.querySelector('#toggle');
+        const html = document.querySelector('html');
+
+        checkbox.addEventListener('click', function () {
+            checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+        })
+    </script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    </body>
+
+</html>
